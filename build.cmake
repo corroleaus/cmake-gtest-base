@@ -1,13 +1,14 @@
 cmake_minimum_required(VERSION 2.8)
 
 set(build_dir ${CMAKE_CURRENT_LIST_DIR}/build)
+set(src_dir ${CMAKE_CURRENT_LIST_DIR}/src)
 
 if(NOT EXISTS ${build_dir})
   file(MAKE_DIRECTORY ${build_dir})
 endif()
 
 execute_process(
-  COMMAND ${CMAKE_COMMAND} ..
+  COMMAND ${CMAKE_COMMAND} ${src_dir}
   WORKING_DIRECTORY ${build_dir}
 )
 
